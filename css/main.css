@@ -22,6 +22,11 @@ a {
     font-family: "Exo 2", sans-serif;
 }
 
+/* 모바일이 아니면 줄개행을 안함 */
+br {
+    display: none;
+}
+
 /* header 스타일 */
 header {
     width: 100%;
@@ -41,6 +46,7 @@ header .inner-header h1.logo {
     width: 200px;
 }
 header .inner-header h1.logo img{
+    /* 이미지 딱맞게 */
     width: 100%;
 }
 
@@ -57,6 +63,7 @@ header .inner-header nav.gnb li a {
     color: #fff;
     font-size: 16px;
     /* background: red; */
+    /* 높이 설정해서 클릭영역 높이기 위해*/
     display: block;
 }
 header .inner-header nav.gnb li a:hover {
@@ -94,3 +101,148 @@ header .inner-header nav.tnb li:last-child a:hover {
     color: #ff8342;
     background: #fff;
 }
+
+/* section main 스타일 */
+section.main {
+    background: url('../img/vis_4.jpg') no-repeat center/cover fixed;
+    /* 세로화면을 가득 채우게 */
+    height: 100vh;
+}
+section.main .main-title {
+    /* 박스를 화면 중앙에 배치 */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+    color: #fff;
+
+     /* 글자 음영주기(좀 더 잘보이게) */
+     text-shadow: 2px 2px 10px rgba(0,0,0, 0.7);
+     animation: uprising 1s;
+}
+@keyframes uprising {
+    0% {
+        top: 60%;
+        opacity: 0;
+    }
+    100% {
+        top: 50%;
+        opacity: 1;
+    }
+}
+section.main .main-title h2 {
+    font-size: 55px;
+    margin-bottom: 20px;
+
+}
+section.main .main-title p {
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+/* a태그를 버튼으로 만들때는 block으로 만드는게 좋음 */
+section.main .main-title .view {
+    display: block;
+    font-style: 15px;
+    border: 1px solid #fff;
+    border-radius: 40px;
+    width: 182px;
+    padding: 8px 0;
+    margin: 0 auto;
+    letter-spacing: 1px;
+    position: relative;
+    /* 넘친부분 숨기게 */
+    overflow: hidden;
+}
+section.main .main-title .view::after {
+    content: '';
+    width: 0;
+    height: 100%;
+    background: rgba(255,255,255, 0.4);
+    /* background: yellow; */
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: 0.3s;
+}
+section.main .main-title .view:hover::after {
+    width: 100%;
+}
+
+/* section about 스타일 */
+
+section.about {
+    background: #fff;
+    padding: 80px 0;
+}
+section.about .title {
+    color: #000;
+    text-align: center;
+}
+section.about .title h2 {
+    font-size: 45px;
+    margin-bottom: 5px;
+}
+section.about .title p {
+    font-style: 18px;
+    color: #555;
+}
+
+section.about ul {
+    /* background: tomato; */
+    width: 74%;
+    margin: 30px auto;
+    border-bottom: 1px solid #ddd;
+}
+section.about ul li {
+    float: left;
+    width: 33.3333333%;
+}
+section.about ul li a .img-box {
+    overflow: hidden;
+}
+section.about ul li a .img-box img {
+    width: 100%;
+    transition: 0.7s;
+}
+section.about ul li a:hover .img-box img {
+    transform: scale(1.2);
+}
+section.about ul li a .text {
+    padding: 25px;
+}
+section.about ul li a .text h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+section.about ul li a .text p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+section.about ul li a .text p.more {
+    font-weight: 700;
+    /* 일괄대문자 변환 cf) lowercase: 일괄소문자 */
+    text-transform: uppercase;
+    position: relative;
+    padding-left: 40px;
+
+}
+section.about ul li a .text p.more::before {
+    /* 아이콘을 텍스트로 */
+    content: '\f30b';
+    font-family: 'Font awesome 5 Free';
+    font-size: 15px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    background: #ff8342;
+    border-radius: 50%;
+    /* 포지션이나 플로트속성을 걸면 자동으로 블록이됨 */
+    /* display: block; */
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
