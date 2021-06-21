@@ -7,6 +7,11 @@ a {
     text-decoration: none;
 }
 
+button, input {
+    outline: none;
+    border: none;
+}
+
 /* common */
 .clearfix::after {
     content: '';
@@ -35,6 +40,7 @@ header {
     height: 100px;
     line-height: 100px;
     position: fixed;
+    z-index: 1000;
 }
 header .inner-header {
     width: 84%;
@@ -60,6 +66,7 @@ header .inner-header nav.gnb li a {
     color: #fff;
     font-size: 16px;
     /* background: red; */
+    /* inline 요소 (text) 클릭영역 넓힐땐 display: block; */
     display: block;
 }
 header .inner-header nav.gnb li a:hover {
@@ -79,6 +86,7 @@ header .inner-header nav.tnb li a {
     text-align: center;
 }
 header .inner-header nav.tnb li:last-child a {
+    /* block으로 크기를 조절하기 위해 */
     display: block;
     width: 105px;
     border: 1px solid #fff;
@@ -174,15 +182,15 @@ section.about {
     padding: 80px 0;
 }
 
-section.about .title {
+section .title {
     color: #000;
     text-align: center;
 }
-section.about .title h2 {
+section .title h2 {
     font-size: 45px;
     margin-bottom: 5px;
 }
-section.about .title p {
+section .title p {
     font-size: 18px;
     color: #555;
 }
@@ -243,4 +251,255 @@ section.about ul li a .text p.more::before {
     left: 0;
     top: -2px;
 
+}
+/* section innovation 스타일 */
+section.innovation {
+    background: #fff;
+    margin-bottom: 150px;
+}
+section.innovation .img-box {
+    width: 74%;
+    height: 540px;
+    background: url('../img/product_1.jpg') no-repeat center/cover;
+    margin: 50px auto 0;
+    position: relative;
+}
+section.innovation .img-box .inner {
+    background: #3a3c4e;
+    width: 80%;
+    position: absolute;
+    left: 50%;
+    bottom: -50px;
+    transform: translateX(-50%);
+}
+section.innovation .img-box .inner h3 {
+    background: #fff;
+    font-size: 18px;
+    padding: 25px 45px;
+    box-sizing: border-box;
+}
+section.innovation .img-box .inner .bottom {
+    color: #fff;
+    line-height: 1.6;
+    padding: 35px 85px;
+    box-sizing: border-box;
+}
+section.innovation .img-box .inner .bottom p {
+    float: left;
+    width: 70%;
+}
+section.innovation .img-box .inner .bottom a {
+    float: right;
+    background: #ff8342;
+    border-radius: 50px;
+    padding: 7px 30px;
+}
+section.innovation .img-box .inner .bottom a:hover {
+    background: #f86010;
+}
+
+/* section me 스타일 */
+section.me {
+    background: url('../img/me.jpg') no-repeat center/cover;
+    margin-bottom: 150px;
+    padding: 80px 0;
+}
+section.me ul.list {
+    width: 74%;
+    margin: 50px auto;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+}
+section.me ul.list > li {
+    padding: 30px 60px;
+}
+section.me ul.list > li:first-child {
+    border-bottom: 1px solid #ddd;
+}
+
+section.me ul.list > li h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    position: relative;
+}
+section.me ul.list > li h3 span {
+    color: #ff8342;
+    position: absolute;
+    left: -35px;
+}
+section.me ul.list > li p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+section.me ul.list > li a.more {
+    font-size: 16px;
+    font-weight: 700;
+}
+section.me ul.list > li a.more span {
+    color: #ff8342;
+    margin-left: 3px;
+    font-size: 14px;
+}
+
+section.me ul.in {
+    margin-bottom: 30px;
+}
+section.me ul.in li {
+    margin-bottom: 10px;
+}
+section.me ul.in li em {
+    float: left;
+    width: 12%;
+    font-weight: 700;
+}
+section.me ul.in li p {
+    float: left;
+    width: 88%;
+    position: relative;
+}
+section.me ul.in li p::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #ff8342;
+    position: absolute;
+    left: -40px;
+    top: 10px;
+}
+
+#incruit-btn {
+    display: block;
+    width: 280px;
+    background: #ff8342;
+    margin: 0 auto;
+    padding: 10px 0;
+    border-radius: 50px;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* section sns 스타일 */
+section.sns {
+    margin-bottom: 60px;
+}
+section.sns ul {
+    width: 74%;
+    margin: 50px auto;
+}
+section.sns ul li {
+    float: left;
+    width: 32%;
+    margin-right: 2%;
+}
+section.sns ul li:last-child {
+    margin-right: 0;
+}
+/* section.sns ul li a {
+    display: block;
+} */
+section.sns ul li a .img-box {
+    height: 251px;
+    overflow: hidden;
+    position: relative;
+}
+section.sns ul li a .img-box img {
+    width: 100%;
+    height: 100%;
+}
+section.sns .bottom {
+    padding: 20px 0 20px 30px;
+}
+section.sns ul li a .bottom p {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 10px auto;
+
+}
+section.sns ul li a .bottom .color {
+    font-size: 15px;
+    color: #ff8342;
+}
+section.sns ul li a .bottom .time {
+    font-size: 15px;
+    color: rgb(180, 179, 179);
+    margin-top: 20px;
+}
+
+section.sns ul li a .img-box::before {
+    content: '';
+    width: 0;
+    height: 100%;
+    background: rgba(255, 131, 66, .85);
+    position: absolute;
+    left: 0;
+    top: 0;    
+    transition: 0.5s;
+}
+section.sns ul li a:hover .img-box::before {
+    width: 100%;
+}
+section.sns ul li a .img-box::after {
+    content: 'BLOG';
+    font: 15px "Exo 2", sans-serif;
+    border: 1px solid #fff;
+    border-radius: 40px;
+    color: #fff;
+    padding: 5px 30px;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: 0.7s;
+}
+section.sns ul li a:hover .img-box::after {
+    opacity: 1;
+}
+
+/* footer 스타일 */
+footer {
+    border-top: 1px solid #ddd;
+    padding: 35px 0;
+}
+footer .inner {
+    width: 85%;
+    margin: 0 auto; 
+}
+footer .inner .ft-logo {
+    float: left;
+    width: 200px;
+    /* background:orange; */
+}
+footer .inner .ft-logo img {
+    width: 100%;
+}
+footer .inner .address {
+    float: left;
+    margin: 22px 100px;
+}
+footer .inner .address li:first-child {
+    font-weight: 700;
+}
+footer .inner .address li:last-child {
+    margin-top: 13px;
+    color: rgb(180, 179, 179);
+}
+
+footer .inner .list {
+    float: right;
+    margin: 22px 0;
+}
+footer .inner .list li {
+    float: left;
+    margin: 0 70px 0 0;
+}
+footer .inner .list li:last-child {
+    font-weight: 700;
+}
+footer .inner .list li a:hover {
+    text-decoration: underline;
+    color: #ff8342;
 }
