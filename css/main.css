@@ -527,6 +527,7 @@ footer .inner .list li a:hover {
 /* 반응형 작업 */
 /* 노트북 해상도 (1599px) */
 @media screen and (max-width: 1599px) {
+    
     header .inner-header {
         width: 95%
     }
@@ -553,6 +554,7 @@ footer .inner .list li a:hover {
 
 /* 태블릿 1024px 해상도 (아이패드 프로) */
 @media screen and (max-width: 1024px) {
+
     header .inner-header nav.gnb, header .inner-header nav.tnb {
         display: none;
     }
