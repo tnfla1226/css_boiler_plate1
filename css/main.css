@@ -550,6 +550,7 @@ footer .inner .list li a:hover {
     }
 
 }
+
 /* 태블릿 1024px 해상도 (아이패드 프로) */
 @media screen and (max-width: 1024px) {
     header .inner-header nav.gnb, header .inner-header nav.tnb {
@@ -586,6 +587,7 @@ footer .inner .list li a:hover {
     footer .inner .ft-logo {
         margin-top: 15px;
     }
+}
 
     /* 태블릿 768px 해상도 (아이패드) */
 @media screen and (max-width: 768px) {
@@ -793,6 +795,4 @@ footer .inner .list li a:hover {
     section.sns ul li a .bottom {
         padding: 20px 10px;
     }
-}
-
 }
